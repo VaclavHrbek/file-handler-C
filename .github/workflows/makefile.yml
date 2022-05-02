@@ -41,7 +41,7 @@ jobs:
     needs: dependencies
     steps:
     - name: configure
-      run: ./configure
+      run: pwd
       
     - name: Install dependencies
       run: make
