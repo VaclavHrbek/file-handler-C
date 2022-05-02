@@ -40,8 +40,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: dependencies
     steps:
-    - name: configure
-      run: pwd
+    - name: Configure
+      run: ./configure
       
     - name: Install dependencies
       run: make
