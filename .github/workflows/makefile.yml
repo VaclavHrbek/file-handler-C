@@ -18,18 +18,18 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Install Autotools
-      run: sudo apt-get install autotools-dev
-      run: sudo apt-get install autoconf
+    - run: sudo apt-get install autotools-dev
+    - run: sudo apt-get install autoconf
     
     - name: Install CHECK
-      run: mkdir $HOME/check && cd $HOME/check
-      run: git clone https://github.com/libcheck/check.git
-      run: autoreconf --install
-      run: ./configure
-      run: make
-      run: make check
-      run: make install
-      run: cd ${{ github.workspace }}
+    - run: mkdir $HOME/check && cd $HOME/check
+    - run: git clone https://github.com/libcheck/check.git
+    - run: autoreconf --install
+    - run: ./configure
+    - run: make
+    - run: make check
+    - run: make install
+    - run: cd ${{ github.workspace }}
       
     - name: configure
       run: ./configure
