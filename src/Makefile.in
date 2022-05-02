@@ -333,10 +333,11 @@ top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = subdir-objects
 lib_LTLIBRARIES = libfile.la
 libfile_la_SOURCES = \
-		$(top_builddir)/src/file.c \
-		$(top_builddir)/include/file.h
+		$(top_builddir)/src/file.c 
 
+#$(top_builddir)/include/file.h
 libfile_la_CFLAGS = -g -Werror -Wall 
+libfile_la_CPPFLAGS = -Iinclude/
 include_HEADERS = $(top_builddir)/include/file.h
 all: all-am
 
@@ -460,11 +461,11 @@ am--depfiles: $(am__depfiles_remade)
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
 
 $(top_builddir)/src/libfile_la-file.lo: $(top_builddir)/src/file.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libfile_la_CFLAGS) $(CFLAGS) -MT $(top_builddir)/src/libfile_la-file.lo -MD -MP -MF $(top_builddir)/src/$(DEPDIR)/libfile_la-file.Tpo -c -o $(top_builddir)/src/libfile_la-file.lo `test -f '$(top_builddir)/src/file.c' || echo '$(srcdir)/'`$(top_builddir)/src/file.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libfile_la_CPPFLAGS) $(CPPFLAGS) $(libfile_la_CFLAGS) $(CFLAGS) -MT $(top_builddir)/src/libfile_la-file.lo -MD -MP -MF $(top_builddir)/src/$(DEPDIR)/libfile_la-file.Tpo -c -o $(top_builddir)/src/libfile_la-file.lo `test -f '$(top_builddir)/src/file.c' || echo '$(srcdir)/'`$(top_builddir)/src/file.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(top_builddir)/src/$(DEPDIR)/libfile_la-file.Tpo $(top_builddir)/src/$(DEPDIR)/libfile_la-file.Plo
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$(top_builddir)/src/file.c' object='$(top_builddir)/src/libfile_la-file.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libfile_la_CFLAGS) $(CFLAGS) -c -o $(top_builddir)/src/libfile_la-file.lo `test -f '$(top_builddir)/src/file.c' || echo '$(srcdir)/'`$(top_builddir)/src/file.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libfile_la_CPPFLAGS) $(CPPFLAGS) $(libfile_la_CFLAGS) $(CFLAGS) -c -o $(top_builddir)/src/libfile_la-file.lo `test -f '$(top_builddir)/src/file.c' || echo '$(srcdir)/'`$(top_builddir)/src/file.c
 
 mostlyclean-libtool:
 	-rm -f *.lo
