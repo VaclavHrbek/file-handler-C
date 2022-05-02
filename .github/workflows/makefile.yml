@@ -41,7 +41,7 @@ jobs:
     needs: dependencies
     steps:
     - name: Configure
-      working-directory: ${{ github.workspace }}
+      working-directory: ${{ runner.temp }}
       run: |
         ls
         pwd
