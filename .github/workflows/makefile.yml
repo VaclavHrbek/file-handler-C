@@ -36,20 +36,20 @@ jobs:
         sudo make check
         sudo make install
 
-    build:
-        runs-on: ubuntu-latest
-        needs: dependencies
-        steps:
-        - name: configure
-          run: ./configure
-          
-        - name: Install dependencies
-          run: make
-          
-        - name: Run check
-          run: make check
-             
-        - name: Run distcheck
-          run: make distcheck
-             
-        - run: echo "🍏 This job's status is ${{ job.status }}."
+  build:
+    runs-on: ubuntu-latest
+    needs: dependencies
+    steps:
+    - name: configure
+      run: ./configure
+      
+    - name: Install dependencies
+      run: make
+      
+    - name: Run check
+      run: make check
+         
+    - name: Run distcheck
+      run: make distcheck
+         
+    - run: echo "🍏 This job's status is ${{ job.status }}."
