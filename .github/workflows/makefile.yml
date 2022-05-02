@@ -32,9 +32,9 @@ jobs:
         cd check
         autoreconf --install
         ./configure
-        make
-        make check
-        make install
+        sudo make
+        sudo make check
+        sudo make install
         cd ${{ github.workspace }}
       
     - name: configure
