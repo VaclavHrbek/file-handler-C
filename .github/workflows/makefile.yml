@@ -7,10 +7,10 @@ on:
     branches: [ main ]
 
 jobs:
-    defaults:
-      run:
-        shell: bash
-        working-directory: .
+  defaults:
+    run:
+      shell: bash
+      working-directory: .
 
   dependencies:
 
