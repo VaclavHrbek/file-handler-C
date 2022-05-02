@@ -29,7 +29,7 @@ jobs:
       run: |
         mkdir $HOME/check && cd $HOME/check
         git clone https://github.com/libcheck/check.git
-        ls
+        cd check
         autoreconf --install
         ./configure
         make
